@@ -4,6 +4,7 @@ import { useState } from "react";
 import PhoneInput from 'react-phone-number-input'
 import { Form, Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
 import { setUpRecaptcha } from "./firebase";
+import "./App.css"
 
 const Phonesignup = () => {
     const [value, setValue] = useState()
@@ -34,22 +35,21 @@ const Phonesignup = () => {
     }
     return (
         <>
-            <div>
-                <h2>Firebase Phone Auth</h2>
+            <div className="login-container">
+                <h2>Penta value task</h2>
                 <Form onSubmit={getOtp} style={{display:!flag?"block":"none"}}>
                     <Form.Group>
                         <PhoneInput
+                            className="phone-input"
                             placeholder="Enter phone number"
                             value={value}
                             onChange={setValue}
                             defaultCountry={"EG"}
                         />
                     </Form.Group>
-                    <div id="recaptcha-container"></div>
-                    <div className="button-right"> 
-                        <Button>Cancel</Button>&nbsp;
+                    <div id="recaptcha-container" className="recaptcha"></div>
+                     
                         <Button type="submit">Send OTP</Button>
-                    </div>
 
                 </Form>
                 <Form onSubmit={VerfiyOtp} style={{display:flag?"block":"none"}}>
@@ -59,10 +59,9 @@ const Phonesignup = () => {
                          onChange={(e)=>setOtp(e.target.value)}/>
                     </Form.Group>
                    
-                    <div className="button-right"> 
-                        <Button>Cancel</Button>&nbsp;
+                    
                         <Button type="submit">Send OTP</Button>
-                    </div>
+                    
 
                 </Form>
             </div>
