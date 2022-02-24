@@ -17,13 +17,15 @@ import {
 import Phonesignup from './Phonesignup';
 import Dashboard from './Dashboard';
 import { user } from './firebase';
+import { getdata } from './dataSlice';
 
 function App() {
   const dispatch = useDispatch()
   console.log(useSelector(selectscreens))
+  console.log(dispatch(getdata()))
   return (
     <div className="App">
-      <button onClick={()=>dispatch(add('something'))}></button>
+      <button onClick={()=>dispatch(add({id:'an id' , newobj:'thenewobj'}))}></button>
       <BrowserRouter>
       <Routes>
         <Route path="/login" element={<Phonesignup/>}></Route>
