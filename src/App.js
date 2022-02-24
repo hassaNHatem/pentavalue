@@ -13,13 +13,17 @@ import {
   BrowserRouter,
 } from "react-router-dom";
 import Phonesignup from './Phonesignup';
+import Dashboard from './Dashboard';
+import { user } from './firebase';
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
       <Routes>
-      <Phonesignup></Phonesignup>
+        <Route path="/login" element={<Phonesignup/>}></Route>
+        <Route path="/" element={user?<Dashboard/>:<Phonesignup/>}></Route>
+        <Route path="/Dashboard" element={user?<Dashboard/>:<Phonesignup/>}></Route>
       </Routes>
     </BrowserRouter>
     </div>
