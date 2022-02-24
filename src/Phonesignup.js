@@ -4,6 +4,7 @@ import { useState } from "react";
 import PhoneInput from 'react-phone-number-input'
 import { Form, Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
 import { setUpRecaptcha } from "./firebase";
+import { useNavigate } from "react-router-dom";
 import "./App.css"
 
 const Phonesignup = () => {
@@ -11,6 +12,7 @@ const Phonesignup = () => {
     const [ otp , setOtp] = useState()
     const [flag , setflag] = useState(false)
     const [confirm , setconfirm] = useState("")
+    let navigate = useNavigate();
     const getOtp =async (e)=>{
         e.preventDefault()
         if(value===""|| value===undefined) return alert('enter a valid number')
@@ -28,7 +30,7 @@ const Phonesignup = () => {
         if(otp===''|| otp===null)return;
         try{
             await confirm.confirm(otp)
-            alert('success!')
+            navigate("/Dashboard")
         }catch(err){
             alert(err)
         }
