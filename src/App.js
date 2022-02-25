@@ -1,6 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
 import { useDispatch , useSelector } from 'react-redux';
 import { add, selectscreens } from './DashboardSlice';
 import './App.css';
@@ -17,12 +15,9 @@ import {
 import Phonesignup from './Phonesignup';
 import Dashboard from './Dashboard';
 import { user } from './firebase';
-import { getdata } from './dataSlice';
 
 function App() {
   const dispatch = useDispatch()
-  console.log(useSelector(selectscreens))
-  console.log(dispatch(getdata()))
   return (
     <div className="App">
       <button onClick={()=>dispatch(add({id:'an id' , newobj:'thenewobj'}))}></button>

@@ -12,20 +12,22 @@ const DashboardSlice = createSlice({
         add(state,{payload}){
             console.log(payload.newobj)
             state.push(payload)
-
+            
         },
-        delete(state , {payload}){
+        
+        del(state,{payload}){
             return state = state.filter(({id})=>id!== payload)
         },
         update(state,{payload}){
-            var obj = state.filter(({id})=>id!== payload.id)
+            var obj = state.filter(({id})=>id=== payload.id)
             let edited = obj[0]
-        return    state[state.indexOf(edited)] = payload.newobj
+            console.log(edited)
+            state[state.indexOf(edited)] = payload.newobj
         }
 
     }
 })
 export const selectscreens = (state)=>state.Dashboard
 
-export const {add} = DashboardSlice.actions
+export const {add , del ,update} = DashboardSlice.actions
 export default DashboardSlice.reducer 
