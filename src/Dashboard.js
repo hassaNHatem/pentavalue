@@ -1,8 +1,13 @@
 import React, { useState } from 'react';
-
+import { Addpanal } from './Addpanal';
+import { Screen } from './Screen';
 const Dashboard = () => {
 
-    return<Screen></Screen> 
+    return (
+    <>
+    <Addpanal></Addpanal>
+    <Screen></Screen>
+    </>) 
 }
 
 

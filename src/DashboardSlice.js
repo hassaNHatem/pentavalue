@@ -10,11 +10,9 @@ const DashboardSlice = createSlice({
     {id:9,image:"https://images.unsplash.com/photo-1609607847926-da4702f01fef?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDZ8fHxlbnwwfHx8&w=1000&q=80",video:""}],
     reducers:{
         add(state,{payload}){
-            console.log(payload.newobj)
             state.push(payload)
             
         },
-        
         del(state,{payload}){
             return state = state.filter(({id})=>id!== payload)
         },

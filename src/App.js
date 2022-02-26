@@ -20,14 +20,13 @@ function App() {
   const dispatch = useDispatch()
   return (
     <div className="App">
-      <button onClick={()=>dispatch(add({id:'an id' , newobj:'thenewobj'}))}></button>
       <BrowserRouter>
       <Routes>
         <Route path="/login" element={<Phonesignup/>}></Route>
         {/*to prevent the user from loggin in each time */}
         <Route path="/" element={user?<Dashboard/>:<Phonesignup/>}></Route>
         {/* server as a private route to prevent the user from routing to the dasahboard manualy*/}
-        <Route path="/Dashboard" element={user?<Dashboard/>:<Phonesignup/>}></Route>
+        <Route path="/Dashboard" element={<Dashboard/>}></Route>
       </Routes>
     </BrowserRouter>
     </div>

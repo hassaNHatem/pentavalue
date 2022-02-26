@@ -84,7 +84,6 @@ body {
   /* Keep the inherited background full size. */
   background-attachment: fixed; 
   background-size: cover;
-  display: grid;
   align-items: center;
   justify-content: center;
   height: 100vh;
@@ -124,4 +123,64 @@ body {
   box-shadow: inset 0 0 2000px rgba(255, 255, 255, .5);
   filter: blur(10px);
   margin: -20px;
+}
+.screens-container{
+  width: 70%;
+  margin: 0 auto;
+  align-items: flex-start;
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+.screens-container .ad-container{
+ padding: 15px;
+height: 500px;
+}
+.ad-container .midea-conatiner{
+  height: 90%;
+}
+.ad-container .btn-container{
+  align-items: center;
+  width: 100%;
+  margin: 0 auto;
+  height: 13%;
+  margin-top: 1%;
+}
+.ad-container .btn-container .edit-container{
+ 
+  width: 100%;
+  margin: 0 auto;
+}
+.edit-container input{
+  padding: 5px;
+  margin-right: 3%;
+width: 35%;
+}
+.edit-container button{
+ width: 20%;
+}
+.btn-container .delete{
+  padding: 5px;
+  width: 100%;
+}
+.input-contaienr{
+  padding: 10px;
+  box-shadow: inset 0 0 2000px rgba(255, 255, 255, .5);
+  border-radius: 8px;
+  width: 70%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.input-contaienr input{
+  border: 1px solid transparent;
+  border-radius: 8px;
+  padding: 8px;
+  width: 40%;
+}
+.input-contaienr button{
+  border: 1px solid transparent;
+  padding: 8px;
+  border-radius: 8px;
 }
