@@ -23,4 +23,4 @@ export function setUpRecaptcha(number){
     return signInWithPhoneNumber(auth , number , recapatcha);
 }
 console.log(auth.currentUser)
-export  const user = "auth.currentUser"
+export  const user = auth.currentUser
